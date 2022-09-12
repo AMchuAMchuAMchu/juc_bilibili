@@ -14,27 +14,33 @@ import org.openjdk.jol.info.ClassLayout;
 public class NoLockTest01 {
 
 
-
     @Test
-    public void test02(){
+    public void test02() {
 
+        Object o = new Object();
+        new Thread(() -> {
+            synchronized (o) {
+                System.out.println(" >> ");
+            }
+        }).start();
 
+        System.out.println(ClassLayout.parseInstance(o).toPrintable());
 
 
     }
 
     @Test
-    public void test01(){
+    public void test01() {
 
         Object o = new Object();
 
         int i = o.hashCode();
 
-        System.out.println("二进制　>>　"+i);
-        System.out.println("十六进制 >> "+Integer.toHexString(i));
-        System.out.println("二进制 >> "+Integer.toBinaryString(i));
+        System.out.println("二进制　>>　" + i);
+        System.out.println("十六进制 >> " + Integer.toHexString(i));
+        System.out.println("二进制 >> " + Integer.toBinaryString(i));
 
-        System.out.println("GUI　info"+ClassLayout.parseInstance(o).toPrintable());
+        System.out.println("GUI　info" + ClassLayout.parseInstance(o).toPrintable());
 
     }
 
