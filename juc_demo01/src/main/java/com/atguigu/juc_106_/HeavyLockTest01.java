@@ -21,7 +21,6 @@ public class HeavyLockTest01 {
 
     public static void main(String[] args) {
 
-
         new Thread(() -> {
             synchronized (heavyLockTest01) {
                 System.out.println(">>");
