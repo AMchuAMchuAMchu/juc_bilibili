@@ -25,15 +25,15 @@ public class HeavyLockTest01 {
         new Thread(() -> {
             synchronized (heavyLockTest01) {
                 System.out.println(">>");
+                System.out.println(ClassLayout.parseInstance(heavyLockTest01).toPrintable());
             }
-            System.out.println(ClassLayout.parseInstance(heavyLockTest01).toPrintable());
         }, "T1").start();
 
         new Thread(() -> {
             synchronized (heavyLockTest01) {
                 System.out.println(">>");
+                System.out.println(ClassLayout.parseInstance(heavyLockTest01).toPrintable());
             }
-            System.out.println(ClassLayout.parseInstance(heavyLockTest01).toPrintable());
         }, "T2").start();
 
     }
