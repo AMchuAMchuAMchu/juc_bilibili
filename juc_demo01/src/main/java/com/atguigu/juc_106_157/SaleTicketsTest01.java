@@ -1,11 +1,7 @@
-package com.atguigu.juc_106_;
-
-import com.atguigu.juc_41_105.LongAddrTest01;
-import lombok.SneakyThrows;
+package com.atguigu.juc_106_157;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.LongAdder;
 
 /**
  * @Description: TODO

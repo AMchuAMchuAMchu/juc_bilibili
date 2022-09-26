@@ -1,7 +1,6 @@
-package com.atguigu.juc_106_;
+package com.atguigu.juc_106_157;
 
 import org.openjdk.jol.info.ClassLayout;
-import org.openjdk.jol.vm.VM;
 
 /**
  * Description==>TODO

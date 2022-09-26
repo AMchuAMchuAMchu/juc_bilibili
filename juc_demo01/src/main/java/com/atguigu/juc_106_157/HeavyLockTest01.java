@@ -1,4 +1,4 @@
-package com.atguigu.juc_106_;
+package com.atguigu.juc_106_157;
 
 import org.openjdk.jol.info.ClassLayout;
 
@@ -13,7 +13,6 @@ import org.openjdk.jol.info.ClassLayout;
 public class HeavyLockTest01 {
 
     public static Object heavyLockTest01 = new Object();
-
 
     public void hello() {
         System.out.println("Hello...");

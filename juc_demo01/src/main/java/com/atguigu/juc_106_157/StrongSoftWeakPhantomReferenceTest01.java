@@ -1,16 +1,11 @@
-package com.atguigu.juc_106_;
+package com.atguigu.juc_106_157;
 
-import org.apache.tomcat.jni.OS;
 import org.junit.Test;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
-import java.time.LocalDateTime;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 /**
  * @Description: 强软弱虚测试
