@@ -24,7 +24,8 @@ public class ReadWriteLockTest {
 
     public void write(String name01,String name02){
         try {
-            reentrantLock.lock();
+//            reentrantLock.lock();
+            reentrantReadWriteLock.writeLock().lock();
             System.out.println(Thread.currentThread().getName() + " 正在写入...");
             hashMap.put(name01,name02);
             try {
@@ -34,23 +35,26 @@ public class ReadWriteLockTest {
             }
             System.out.println(Thread.currentThread().getName() + " 已经写完...");
         } finally {
-            reentrantLock.unlock();
+//            reentrantLock.unlock();
+            reentrantReadWriteLock.writeLock().unlock();
         }
     }
 
     public void read(String key){
         try {
-            reentrantLock.lock();
+//            reentrantLock.lock();
+            reentrantReadWriteLock.readLock().lock();
             System.out.println(Thread.currentThread().getName() + " 正在读取...");
             String s = hashMap.get(key);
             try {
-                TimeUnit.MILLISECONDS.sleep(500);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             System.out.println(Thread.currentThread().getName() + " 读取完毕...");
         } finally {
-            reentrantLock.unlock();
+//            reentrantLock.unlock();
+            reentrantReadWriteLock.readLock().unlock();
         }
     }
 
@@ -69,6 +73,19 @@ public class ReadWriteLockTest {
                 rwt.read("name01");
             },String.valueOf(i)).start();
         }
+
+        try {
+            TimeUnit.MILLISECONDS.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        for (int i = 1; i <= 3; i++) {
+           new Thread(()->{
+               rwt.write("name01","name02");
+           },String.valueOf(i)).start();
+        }
+
 
     }
 
