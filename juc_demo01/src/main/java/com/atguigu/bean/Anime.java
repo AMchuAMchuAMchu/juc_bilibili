@@ -2,6 +2,7 @@ package com.atguigu.bean;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 
 /**
  * @Description: TODO
@@ -12,6 +13,17 @@ import java.sql.Timestamp;
  * @Author: 02雪乃赤瞳楪祈校条祭制作委员会 wyq_start
  */
 public class Anime implements Serializable {
+
+    public void test(){
+
+        AnimeInfo animeInfo = new AnimeInfo();
+        animeInfo.test(9);
+
+
+        ArrayList<String> strings = new ArrayList<>();
+        strings.forEach(System.out::println);
+
+    }
 
     private String animeName;
 
