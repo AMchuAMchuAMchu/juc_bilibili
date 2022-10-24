@@ -64,15 +64,11 @@ public class StampLockDemo01 {
 
         StampLockDemo01 stampLockDemo01 = new StampLockDemo01();
 
-            new Thread(()->{
-                stampLockDemo01.readLock();
-            },"read").start();
+            new Thread(stampLockDemo01::readLock,"read").start();
 
 
         for (int i = 0; i < 5; i++) {
-            new Thread(()->{
-                stampLockDemo01.writeLock();
-            },String.valueOf(i)).start();
+            new Thread(stampLockDemo01::writeLock,String.valueOf(i)).start();
         }
 
 
