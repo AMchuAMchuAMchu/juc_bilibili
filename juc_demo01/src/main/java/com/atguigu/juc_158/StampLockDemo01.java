@@ -13,14 +13,16 @@ import java.util.concurrent.locks.StampedLock;
  */
 public class StampLockDemo01 {
 
-    int num = 10;
+    static int num = 10;
 
     public static StampedLock stampedLock = new StampedLock();
 
 
     public void readLock() {
 
-        long l = stampedLock.readLock();
+//        long l = stampedLock.readLock();
+
+        long l = stampedLock.tryOptimisticRead();
 
 
         try {
