@@ -2,7 +2,6 @@ package com.atguigu.juc_158;
 
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
@@ -16,8 +15,6 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class ReadWriteLockTest {
 
     public HashMap<String,String> hashMap = new HashMap<>();
-
-    public ReentrantLock reentrantLock = new ReentrantLock();
 
     public ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
 
